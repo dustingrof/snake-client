@@ -6,11 +6,12 @@ const setupInput = function () {
   stdin.on("data", handleUserInput);
   return stdin;
 };
-const handleUserInput = function(data) {
+const handleUserInput = function(key) {
   // your code here
-  if (data === '\u0003') {
+  if (key === '\u0003') {
     process.exit();
   }
+  if (key === "w") console.log("w key was pressed");
 };
 
 module.exports = setupInput;
